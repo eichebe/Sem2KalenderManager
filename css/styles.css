@@ -1,0 +1,23 @@
+table{
+   border: 30px;
+   border-color: black;
+   color: black;
+   padding: 30px;
+
+}
+*{
+    background-color: azure;
+}
+.KalenderTag{
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+.hour1, .hour2, .hour3, .hour4, .KalenderEintrag1, .KalenderEintrag2, .KalenderEintrag3, .KalenderEintrag4, .KalenderEintrag5, .KalenderEintrag6, .KalenderEintrag7, .KalenderEintrag8, .KalenderEintrag9, .KalenderEintrag10, .KalenderEintrag11, .KalenderEintrag12, .KalenderEintrag13, .KalenderEintrag14, .KalenderEintrag15, .KalenderEintrag16, .KalenderEintrag17, .KalenderEintrag18, .KalenderEintrag19, .KalenderEintrag20, .KalenderEintrag21, .KalenderEintrag22, .KalenderEintrag23, .KalenderEintrag24, .KalenderEintrag25, .KalenderEintrag26, .KalenderEintrag27, .KalenderEintrag28{
+    padding-right: 30px;
+    padding-bottom: 30px;
+
+}
+#plus{
+    vertical-align: middle;
+}
+
