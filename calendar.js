@@ -19,18 +19,6 @@ function main () {
     }else{
         console.log("Debug-Elemen nicht gefunden")
     }
-
-    function getDateGerman(date) {
-        day = date.getDate();
-        month = date.getMonth();
-        month = month + 1;
-
-        year= date.getFullYear();
-
-        if (String(day).length == 1) day = "0" + day;
-        if (String(month).length == 1){
-            month = "0" + month;
-            
         }
         dateGerman = day + "." + month + "." + year;
         return dateGerman;
