@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalender Manager</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="calendar.js" defer></script>
+    <link rel="stylesheet " href="css/styles.css">
 </head>
+
 <body>
-    <main>
-        <header>
-            <div class="WeekControls"></div>
-            <div class="generalContols">
-            <i id="prevWeekBtn";class="fas fa-angle-double-left"></i>
-            <i id="prevWeekBtn";class="fas fa-angle-double-right"></i>
+    <div id="container">
+        <div id="header">
+            <div id="monthDisplay"></div>
+            <div>
+                <button id="backButton">Back</button>
+                <button id="nextButton">Next</button>
+            </div>
         </div>
-        </header>
-    </main>
-    <div id="seitenkopf">
-        <h1>Kalender: <span> id="field1>(Datum deutsch)</span></h1>
-    </div>    
-    <div id="buttonsset"><button id="buttonleft", type="button";></button>
-    <span id="WochenanzeigeStart"></span>
-    -
-    <span id="WochenanzeigeEnde"></span>
-    <button id="buttonright", type="button";></button>
-    </div>
-    <div id="debug">
-        <table>
-            
-        </table>
-    </div>
-        <form id="TerminEingabe"><img id="plus", src="plus.png" width="40", height="40", alt=""><input id="datum"> 
-        </form>
+        <div id="weekdays">
+            <div>Montag</div>
+            <div>Dienstag</div>
+            <div>Mittwoch</div>
+            <div>Donnerstag</div>
+            <div>Freitag</div>
+            <div>Samstag</div>
+            <div>Sonntag</div>
+        </div>
     
-</body>
+    <div id="calendar"></div>
+</div>
+    <div id="newEventModal">
+        <h2>New Event</h2>
+
+        <input type="eventTitleInput" placeholder="Event Title">
+
+        <button id="saveButton">Save</button>
+        <button id="cancelButton">Cancel</button>
+
+    </div>
+
+    <div id="deleteEventModal">
+        <h2>Event</h2>
+
+        <p id="eventText"></p>
+
+        <button id="deleteButton">Delete</button>
+        <button id="closeButton">Close</button>
+    </div>
+
+    <div id="modalBackDrop"></div>
+
+        <script src="script.js" ></script>
+    </body>
 </html>
