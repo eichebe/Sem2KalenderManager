@@ -93,7 +93,7 @@ button {
   }
   
   .day + #currentDay {
-    background-color:#f3f3f3;
+    background-color:#1d8ede;
   }
   .event {
     font-size: 10px;

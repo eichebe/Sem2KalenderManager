@@ -2,7 +2,6 @@ let nav = 0;
 let clicked = null;
 let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
 //search for local Item. Make sure it does exist
-
 //Ref to calender block DOM
 const calendar = document.getElementById("calendar");
 //calender Referenz
@@ -12,7 +11,7 @@ const newEventModal = document.getElementById("newEventModal");
 const deleteEventModal = document.getElementById("deleteEventModal");
 const backDrop = document.getElementById("modalBackdrop");
 const eventTitleInput = document.getElementById("eventTitleInput");
-const weekdays = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
+const weekdays = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
 
 function openModal(date){
     clicked = date;
@@ -34,6 +33,7 @@ function load() {
     const dt = new Date();
 
     if (nav !==0) {
+        //selection for Buttons Month + nav
         dt.setMonth(new Date().getMonth() + nav);
     }
 
@@ -93,7 +93,7 @@ function load() {
 }
 
 function closeModal() {
-    eventTitleInput.classList.remove("error");
+    //eventTitleInput.classList.remove("error");
     newEventModal.style.display = "none";
     deleteEventModal.style.display = "none";
     backDrop.style.display = "none";
@@ -104,7 +104,7 @@ function closeModal() {
 
 function saveEvent() {
     if (eventTitleInput.value) {
-        eventTitleInput.classList.remove("error");
+        //eventTitleInput.classList.remove("error");
 
         events.push({
             date: clicked,
@@ -112,21 +112,27 @@ function saveEvent() {
         });
 
     localStorage.setItem("events", JSON.stringify(events));
+    
     closeModal();
-    }else{
+    
+}else{
         eventTitleInput.classList.add("error");
     }
 }
 function deleteEvent() {
+    
     events = events.filter(e => e.date !== clicked);
+    
     localStorage.setItem("events", JSON.stringify(events));
     closeModal();
 }
 function initButtons () {
+    
     document.getElementById("nextButton").addEventListener("click", () => {
         nav++;
         load();
     });
+    
     document.getElementById("backButton").addEventListener("click", () => {
         nav--;
         load();
