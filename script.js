@@ -9,9 +9,9 @@ const calendar = document.getElementById("calendar");
 const newEventModal = document.getElementById("newEventModal");
 //Delete Modal
 const deleteEventModal = document.getElementById("deleteEventModal");
-const backDrop = document.getElementById("modalBackdrop");
+const backDrop = document.getElementById("modalBackDrop");
 const eventTitleInput = document.getElementById("eventTitleInput");
-const weekdays = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
+const weekdays = [ "Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
 
 function openModal(date){
     clicked = date;
@@ -20,13 +20,17 @@ function openModal(date){
 
    
   if (eventForDay) {
-    document.getElementById('eventText').innerText = eventForDay.title;
-    deleteEventModal.style.display = 'block';
+    document.getElementById("eventText").innerText = eventForDay.title;
+    deleteEventModal.style.display = "block";
   } else {
-    newEventModal.style.display = 'block';
+    newEventModal.style.display = "block";
   }
 
-  backDrop.style.display = 'block';
+  backDrop.style.display = "block";
+}
+
+function startDay () {
+    startDay = getDay();
 }
 
 function load() {
@@ -59,7 +63,7 @@ function load() {
 
     calendar.innerHTML = "";
 
-    for(let i = 1; i <= paddingDays + daysInMonth; i++){
+    for(let i = 0; i <= paddingDays + daysInMonth; i++){
         const daySquare = document.createElement("div");
         daySquare.classList.add("day");
 
@@ -119,6 +123,7 @@ function saveEvent() {
         eventTitleInput.classList.add("error");
     }
 }
+
 function deleteEvent() {
     
     events = events.filter(e => e.date !== clicked);
@@ -126,6 +131,7 @@ function deleteEvent() {
     localStorage.setItem("events", JSON.stringify(events));
     closeModal();
 }
+
 function initButtons () {
     
     document.getElementById("nextButton").addEventListener("click", () => {
