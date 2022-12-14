@@ -11,7 +11,7 @@ const newEventModal = document.getElementById("newEventModal");
 const deleteEventModal = document.getElementById("deleteEventModal");
 const backDrop = document.getElementById("modalBackDrop");
 const eventTitleInput = document.getElementById("eventTitleInput");
-const weekdays = [ "Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
+const weekdays = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
 
 function openModal(date){
     clicked = date;
@@ -38,6 +38,8 @@ function load() {
 
     if (nav !==0) {
         //selection for Buttons Month + nav
+        dt.setMonth;
+        dt.setDate(1);
         dt.setMonth(new Date().getMonth() + nav);
     }
 
@@ -50,24 +52,29 @@ function load() {
     //last day in the month
     const daysInMonth = new Date(year, month + 1, 0).getDate();
     
-    const dateString = firstDayOfMonth.toLocaleDateString("en-us", {
-        weekday: "long",
-        year: "numeric",
-        month: "numeric",
+    const dateString = firstDayOfMonth.toLocaleDateString("de-DE", {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'numeric',
         day: "numeric",
+    
     });
 
-    const paddingDays = weekdays.indexOf(dateString.split(', ') [0]);
+    //get Weekday out of the Date String by splitting at index 0
+    const padd = weekdays.indexOf(dateString.split(', ') [0]);
+    const paddingDays = padd;
+    
 
-    document.getElementById("monthDisplay").innerText = `${dt.toLocaleDateString("en-us", { month: "long"})} ${year}`;
+    document.getElementById("monthDisplay").innerText = 
+        `${dt.toLocaleDateString("en-us", { month: "long"})} ${year}`;
 
-    calendar.innerHTML = "";
+    calendar.innerHTML = '';
 
-    for(let i = 0; i <= paddingDays + daysInMonth; i++){
+    for(let i = 1; i <= paddingDays + daysInMonth; i++) {
         const daySquare = document.createElement("div");
         daySquare.classList.add("day");
 
-        const dayString = `${i - paddingDays}/${month + 1}/${year}`;
+        const dayString = `${month + 1}/${i - paddingDays}/${year}`;
         
         if(i > paddingDays) {
             daySquare.innerText = i - paddingDays;
@@ -97,7 +104,7 @@ function load() {
 }
 
 function closeModal() {
-    //eventTitleInput.classList.remove("error");
+    
     newEventModal.style.display = "none";
     deleteEventModal.style.display = "none";
     backDrop.style.display = "none";
@@ -108,8 +115,6 @@ function closeModal() {
 
 function saveEvent() {
     if (eventTitleInput.value) {
-        //eventTitleInput.classList.remove("error");
-
         events.push({
             date: clicked,
             title: eventTitleInput.value,
@@ -119,9 +124,7 @@ function saveEvent() {
     
     closeModal();
     
-}else{
-        eventTitleInput.classList.add("error");
-    }
+}
 }
 
 function deleteEvent() {
