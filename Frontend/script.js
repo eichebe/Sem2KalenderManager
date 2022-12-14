@@ -1,6 +1,7 @@
 let nav = 0;
 let clicked = null;
 let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
+//let eventsweb = sessionStorage.getItem('events') ? JSON.parse(sesionStorage.getItem('events')) : [];
 //search for local Item. Make sure it does exist
 //Ref to calender block DOM
 const calendar = document.getElementById("calendar");

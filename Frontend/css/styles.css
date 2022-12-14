@@ -7,12 +7,12 @@ body {
 button {
     width: 75px;
     cursor: pointer;
-    box-shadow: 0px 0px 2px gray;
+    box-shadow: 0px 0px 2px lightgray;
     border: none;
     outline: none;
     padding: 5px;
     border-radius: 5px;
-    color: rgb(78, 7, 7);
+    color:black;
 }
 #weekdays {
     width: 100%;
