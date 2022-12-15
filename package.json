@@ -1,0 +1,23 @@
+{
+  "name": "sem2kalendermanager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eichebe/Sem2KalenderManager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eichebe/Sem2KalenderManager/issues"
+  },
+  "homepage": "https://github.com/eichebe/Sem2KalenderManager#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
